@@ -1,20 +1,23 @@
-# Use the official Node.js image as the base
-FROM node:14
+# Use an official Rust runtime as a parent image
+FROM rust:1.49 as build
 
-# Set the working directory to /app
-WORKDIR /app
+# Set the working directory in the container to /usr/src/app
+WORKDIR /usr/src/app
 
-# Copy the package.json and package-lock.json files
-COPY package*.json ./
-
-# Install the dependencies
-RUN npm install
-
-# Copy the rest of the files
+# Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
-# Expose port 8080 for the app
-EXPOSE 8080
+# Install any needed packages specified in Cargo.toml
+RUN cargo install --path .
 
-# Start the app when the container runs
-CMD [ "npm", "start" ]
+# Use an official lightweight Alpine image for a lean production container
+FROM alpine:latest
+
+# Copy the binary from the build stage to the production image
+COPY --from=build /usr/local/cargo/bin/your_binary_name /usr/local/bin/your_binary_name
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Run your_binary_name when the container launches
+CMD ["binary"]
