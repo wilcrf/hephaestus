@@ -1,0 +1,113 @@
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #0f0f0f;
+  background-color: #ffffff;
+  transition: border-color 0.25s;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  border-color: #ff84009b;
+}
+
+button:active {
+  border-color: #d83939;
+  background-color: #e8e8e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    color: #ffffff;
+    background-color: #0f0f0f98;
+  }
+
+  button:active {
+    background-color: #0f0f0f69;
+  }
+}
+
+#login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-button i {
+  margin-right: 10px;
+}
+
+#login {
+  display: flex;
+  justify-content: center;
+}
+
+#project-actions {
+  display: flex;
+  justify-content: center;
+}
+
+#list-projects-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#list-projects-button i {
+  margin-right: 10px;
+}
+
+#add-project-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#add-project-button i {
+  margin-right: 10px;
+}
+
+#edit-project-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit-project-button i {
+  margin-right: 10px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title img {
+  margin-top: 10px;
+}
+
+
+#title-container img:hover {
+  box-shadow: 0 0 10px #ff84009b; /* This will add an orange shadow */
+}
+
+#title {
+  font-size: 2em;
+}
+
+#control-pane {
+  font-size: 1.5em;
+}
+
+#title, #control-pane {
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
+  text-transform: uppercase;
+}
