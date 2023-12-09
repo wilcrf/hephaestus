@@ -6,12 +6,12 @@ async fn login() -> impl Responder {
 }
 
 async fn list_policies() -> impl Responder {
-    println!(~List Policies~);
+    println!("List Policies");
     "Policies listed!"
 }
 
 async fn list_roles() -> impl Responder {
-    println("List roles");
+    println!("List roles");
     "Roles listed!"
 }
 
